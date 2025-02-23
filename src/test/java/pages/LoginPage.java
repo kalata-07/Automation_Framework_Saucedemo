@@ -11,7 +11,7 @@ public class LoginPage {
     @FindBy(id="user-name")
     private WebElement usernameInput;
 
-    @FindBy(css = "[placeholder=\"Password\"]")
+    @FindBy(id = "password")
     private WebElement passwordInput;
 
     @FindBy(id = "login-button")

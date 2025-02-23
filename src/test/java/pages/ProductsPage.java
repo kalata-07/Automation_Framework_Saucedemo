@@ -9,11 +9,12 @@ import org.openqa.selenium.support.PageFactory;
 public class ProductsPage {
     protected WebDriver driver;
     private static final String ADD_TO_CART_LOCATOR="//button[@id='add-to-cart-sauce-labs-%s']";
+    private static final String REMOVE_FROM_CART_LOCATOR="//button[@id='remove-sauce-labs-%s']";
 
     @FindBy(className = "shopping_cart_container")
     private WebElement shoppingCartLink;
 
-    @FindBy(className = "fa-layers-counter shopping_cart_badge")
+    @FindBy(className = "shopping_cart_badge")
     private WebElement shoppingCartBadge;
 
     public ProductsPage(WebDriver driver){
@@ -28,7 +29,7 @@ public class ProductsPage {
     }
 
     public boolean removeItemFromTheCart(String productName){
-        String xpathOfElementToBeAdded = String.format(ADD_TO_CART_LOCATOR, productName);
+        String xpathOfElementToBeAdded = String.format(REMOVE_FROM_CART_LOCATOR, productName);
         WebElement removeButton=driver.findElement(By.xpath(xpathOfElementToBeAdded));
         if(removeButton.getText().equals("Remove")){
            removeButton.click();

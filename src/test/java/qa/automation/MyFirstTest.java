@@ -28,21 +28,21 @@ public class MyFirstTest {
 
     @Test
     public void successfulLoginTest(){
-        driver.get("https://www.saucedemo.com/v1/");
+        driver.get("https://www.saucedemo.com/");
 
         WebElement username = driver.findElement(By.id("user-name"));
         username.click();
         username.sendKeys("standard_user");
 
         // (//input[@class='form_input'])[2]
-        WebElement password = driver.findElement(By.xpath("//*[@id=\"password\"]"));
+        WebElement password = driver.findElement(By.id("password"));
         password.click();
         password.sendKeys("secret_sauce");
 
-        WebElement loginBtn = driver.findElement(By.cssSelector("[value=LOGIN]"));
+        WebElement loginBtn = driver.findElement(By.cssSelector("[value=Login]"));
         loginBtn.click();
 
-        WebElement userAllPagesButton = driver.findElement(By.id("menu_button_container"));
+        WebElement userAllPagesButton = driver.findElement(By.id("react-burger-menu-btn"));
         Assert.assertTrue(userAllPagesButton.isDisplayed());
     }
 }

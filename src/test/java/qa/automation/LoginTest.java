@@ -50,14 +50,14 @@ public class LoginTest extends TestUtil {
         username.sendKeys(userName);
 
         // (//input[@class='form_input'])[2]
-        WebElement passwordInput = driver.findElement(By.xpath("//*[@id=\"password\"]"));
+        WebElement passwordInput = driver.findElement(By.id("password"));
         passwordInput.click();
         passwordInput.sendKeys(password);
 
-        WebElement loginBtn = driver.findElement(By.cssSelector("[value=LOGIN]"));
+        WebElement loginBtn = driver.findElement(By.cssSelector("[value=Login]"));
         loginBtn.click();
 
-        WebElement errorLoginLabel = driver.findElement(By.xpath("//*[text()='Epic sadface: ']"));
+        WebElement errorLoginLabel = driver.findElement(By.className("error-button"));
 
         Assert.assertTrue(errorLoginLabel.isDisplayed());
     }
