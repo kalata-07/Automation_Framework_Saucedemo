@@ -45,20 +45,23 @@ public class LoginTest extends TestUtil {
     public void UnsuccessfulLogin(String userName, String password){
 //        driver.get("https://www.saucedemo.com/v1/");
 
-        WebElement username = driver.findElement(By.id("user-name"));
-        username.click();
-        username.sendKeys(userName);
+//        WebElement username = driver.findElement(By.id("user-name"));
+//        username.click();
+ //       username.sendKeys(userName);
 
         // (//input[@class='form_input'])[2]
-        WebElement passwordInput = driver.findElement(By.id("password"));
-        passwordInput.click();
-        passwordInput.sendKeys(password);
+//        WebElement passwordInput = driver.findElement(By.id("password"));
+ //       passwordInput.click();
+ //       passwordInput.sendKeys(password);
 
-        WebElement loginBtn = driver.findElement(By.cssSelector("[value=Login]"));
-        loginBtn.click();
+//        WebElement loginBtn = driver.findElement(By.cssSelector("[value=Login]"));
+ //       loginBtn.click();
+
+        LoginPage loginPage = new LoginPage(driver);
+       loginPage.login(userName, password);
+       // loginPage.tryToLogin(userName, password);
 
         WebElement errorLoginLabel = driver.findElement(By.className("error-button"));
-
         Assert.assertTrue(errorLoginLabel.isDisplayed());
     }
 
