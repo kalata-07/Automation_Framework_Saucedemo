@@ -3,10 +3,10 @@ package qa.automation;
 import base.TestUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+//import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
 import pages.ProductsPage;
 
